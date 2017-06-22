@@ -1,0 +1,76 @@
+﻿@model mvc.Models.Order
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal container">
+        <h4>查詢訂單</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <table class="table table-bordered ">
+            <tr>
+                <td>@Html.LabelFor(model => model.OrderId, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>@Html.EditorFor(model => model.OrderId, new { htmlAttributes = new { @class = "text-right form-control" } })
+                    @Html.ValidationMessageFor(model => model.OrderId, "", new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>
+                    @{
+                        List<SelectListItem> items = (List<SelectListItem>)ViewData["CustId"];
+                    }
+                    @Html.DropDownListFor(model => model.CustId, items, "請選擇", null)
+                    @Html.ValidationMessageFor(model => model.CustId, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.EmpName, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>
+                    @{
+                        List<SelectListItem> EmpId = (List<SelectListItem>)ViewData["EmpId"];
+                    }
+                    @Html.DropDownListFor(model => model.EmpId, EmpId, "請選擇", null)
+                    @Html.ValidationMessageFor(model => model.EmpId, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.ShipperName, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>
+                    @{
+                        List<SelectListItem> ShipperId = (List<SelectListItem>)ViewData["ShipperId"];
+                    }
+                    @Html.DropDownListFor(model => model.ShipperId, ShipperId, "請選擇", null)
+                    @Html.ValidationMessageFor(model => model.ShipperId, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.OrderDate, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>@Html.EditorFor(model => model.OrderDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OrderDate, "", new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.RequireDate, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>@Html.EditorFor(model => model.RequireDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RequireDate, "", new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.ShippedDate, htmlAttributes: new { @class = "control-label col-md-4" })</td>
+                <td>@Html.EditorFor(model => model.ShippedDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ShippedDate, "", new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="查詢" class="btn btn-default" />
+                    <input type="reset" value="清除" class="btn btn-default" onclick="" />
+                    <input type="button" value="新增訂單"class="btn btn-default" onclick="javascript:window.location='@Url.Action("Create", "Order")'" />                    
+                </td>
+            </tr>
+        </table>            
+    </div>
+   
+}
+
+<div>
+    @Html.ActionLink("回到訂單列表", "Index")
+</div>

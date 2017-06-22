@@ -1,0 +1,146 @@
+﻿@model mvc.Models.Order
+
+<div>
+    <h4>訂單詳細資料</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </dt>
+        <dd>
+            @Model.OrderId
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CustId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequireDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShippedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShippedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipperId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipperId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipperName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Freight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Freight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipRegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipPostalCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipPostalCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShipCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShipCountry)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("編輯", "Edit", new { OrderId = Model.OrderId }) |
+    @Html.ActionLink("回到訂單列表", "Index")
+</p>
